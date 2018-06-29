@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Make your reservation in Hotelio hotels here">
+    <meta name="keywords" content="hotel, booking, relax, holiday, vacation, family">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Elena Nikolova, Elitsa Shishkova">
+    <title>Hotelio</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="assets/images/logo.png">
+    <script src="assets/script/jquery-3.2.1.js"></script>
+    <script src="assets/script/ajax.js"></script>
+</head>
+
+<body>
+    <div id='wrapper'>
+    <header >
+        <div id='menu'>
+        <div id='logo'>
+            <img src="assets/images/logo1png.png" alt="logo">
+        </div>
+        <nav>
+            <ul>
+                <li class='menu'><a href="#wrapper">Home</a></li>
+                <li class='menu'><a href="#aboutUs">About us</a></li>
+                <li class='menu'><a href="#asidereservation">Hotels</a></li>
+                <li class='menu'><a href="#info">Contact</a></li>
+                <li class='menu'><a href="#signUp" onclick="document.getElementById('signUp').style.display='block'">Sign up</a></li>
+                <li class='menu'><a href="#login" onclick="document.getElementById('login').style.display='block'">Log in</a></li>
+            </ul>
+
+        </nav>
+        </div>
+        <div class='slideshow'>
+            <img src="assets/images/img1.jpg" alt="hotel view" class='slide'>
+            <img src="assets/images/img2.jpg" alt="hotel view" class='slide'>
+            <img src="assets/images/img3.jpg" alt="hotel view" class='slide'>
+            <img src="assets/images/img4.jpg" alt="hotel view" class='slide'>
+
+             <!--<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+             <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
+        </div>
+    </header>
+    <script src="assets/script/slideshow.js"></script>
+    <div id="signUp" class="window">
+        <span onclick="document.getElementById('signUp').style.display='none'" class="close" title="Close form">x</span>
+        
+        <form class="modal-content" action="">
+            <div class="signUpForm">
+                <h3>Sign up for more features!</h3>
+                <img src="assets/images/logo1png.png" alt="Hotelio's logo" id="signUpLogo">
+                <label for="email">Email</label>
+                <input type="email" placeholder="Your email" name="email" required>
+                <label for="firstName"> First name</label>
+                <input type="text" placeholder="First name" name="firstName" required>
+                <label for="lastName">Last name</label>
+                <input type="text" placeholder="Last name" name="lastName" required>
+                <label for="telNumber">Telephone number</label>
+                <input type="text" placeholder="Telephone number" name="telNumber" required>
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" name="password" required>
+                <label for="repeatedPassword">Repeat password</label>
+                <input type="password" placeholder="Repeat password" required>
+                <input type="checkbox" checked="checked"> Remember me
+                <p>By creating an account you agree to our <a href="#">Terms and Privacy</a></p>
+                <div class="clear">
+                    <button type="submit" class="signup">Sign up</button>
+                    <button type="button" onclick="document.getElementById('signUp').style.display='none'" class="cancel">Cancel</button>
+                    <span class="psw">Do you have already account? Login<a href="#login" onclick="document.getElementById('signUp').style.display='none'; document.getElementById('login').style.display='block'"> here!</a></span>	
+                </div>
+             </div>
+        </form>
+    </div>
+   
+    
+    <div id="login" class="window">
+        <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">x</span>
+        <form class="modal-content" action="">
+            <div class="logInForm">
+                <h3>Log in for your personal offers!</h3>
+                <label>Email</label>
+                <input type="email" placeholder="Enter email" name="email" required>
+                <label>Password</label>
+                <input type="password" placeholder="Enter password" name="password" required>
+                <input type="checkbox" checked="checked">Remember me
+                <div class="clear">
+                    <button type="submit" class="login">Login</button>
+                    <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancel">Cancel</button>
+                    <span class="psw">Forgot <a href="#">password </a> or register<a href="#signUp"  onclick="document.getElementById('login').style.display='none'; document.getElementById('signUp').style.display='block'"> here </a> </span>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="assets/script/signup-login.js"></script>
+    <aside id='asidereservation'>
+        <form action='' method="post" id='reservation'>
+            <fieldset id='slojiFon'>
+                <legend>Reservation form</legend>
+               <input type="search" id='search' name='search' >  
+               
+                <label for="check-in" >Check in</label>
+                <input type="date" name="check-in" id="check-in">
+                <label for="check-out">Check out</label>
+                <input type="date" name="check-out" id="check-out">
+                <br>
+                <div>
+                <label for='rooms'>Rooms:</label>
+              <select name="rooms" id="rooms">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+              </select>
+              </div>
+              <div>
+                <label for="adults">Adults:</label>
+             <select name="adults" id="adults">
+                 <option value="1">1</option>
+                 <option value="2">2</option>
+                 <option value="3">3</option>
+                 <option value="4">4</option>
+             </select>
+              </div>
+              <div>
+                <label for="child">Child:</label>
+                  <select name="child" id="child">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                  </select>
+                  </div>
+                 
+                  <button for="search" onclick="draw(receiveValue,  event)">Search</button>
+
+            </fieldset>
+        </form>
+    </aside>
+    <main>
+         
+    </main>
+    <section id='hot'>
+            <script src='assets/script/rooms.js'></script>
+    </section> 
+    <section id="adv"><h1>The advantages of our hotel</h1>
+        <div id="short"><p>Our hotel offers our guests the best advantages for all situations and people.</p>
+        <button id="but">See more</button>
+    </section>
+    <section id="aboutUs">
+            <div class="text"><h1>About us</h1>
+            <p>We’re proud to welcome you to our collection, which includes some of the most iconic hotels in the world, including The Plaza in New York, The Savoy in London, Hotelio Peace Hotel in Shanghai and Hotelio Le Château Frontenac in Québec City. We invite you to think of these, or any of our 70 hotels around the world, as your home base for all of your adventures.
+                <br>  
+                <br>  
+            Many of our hotels were among the first buildings to be erected in young cities across North America; in these places, we can boast that our communities literally grew up around us. Today, we have added many modern city-center properties to our collection, with core locations from Barcelona to Beijing that allow you to join the bustle of the city and enjoy the culture, flavors and sounds of local life. 
+                <br>
+                <br>   
+             And, if urban excitement isn’t on your itinerary, our resorts welcome you to some of the most breathtaking and pristine areas in the world, where you can bask on an inviting beach, challenge yourself on a stunning golf course and feel the rush of fresh powder on an exhilarating ski hill.
+                <br>
+                <br>
+            While we aim to give you an authentic experience of the locale whenever you stay with us, we also guarantee consistent high standards throughout our collection of hotels and resorts. Contemporary amenities and timeless elegance—inspired by our unique destinations—are reflected throughout every Hotelio guest room. Features such as our Hotelio President’s Club recognition and preferences program, our Fairmont Gold exclusive lifestyle experience and our business centers are all ready for your convenience. </p>
+            </div>
+            <div id="aui"><img src="assets/images/happy-tourists.jpg" alt="Our happy tourists" ></div>
+        </section>
+
+    <section id="info">
+        <p>Please fill out this short form and we will be happy to respond to your requests for information or suggestions.</p>
+        <div class="contact">
+        <form action="" method="post">
+            <fieldset >
+                <label for="name">Name*</label>
+                <input type="text" placeholder="Name" name="name" required>
+                <label for="email">Email*</label>
+                <input type="email" placeholder="Email" name="email" required>
+                <label for="message">Message*</label>
+                <textarea name="message" rows="5" cols="100" placeholder="Enter your message here" required></textarea>
+                <input type="submit" value="Submit">
+            </fieldset>    
+        </form>
+        </div>
+        <div class="address">
+            <p>You can find us here!</p>
+            <address>
+                 <i class="fa fa-home"></i>Balkan Str 28<br>
+                 <i class="fa fa-map-marker"></i>Sofia, Bulgaria<br>
+                 <i class="fa fa-phone-square"></i>+359 864 15 4549<br>
+            </address>
+        </div>
+    </section>
+    <footer>
+        <div class="socialIcons">
+            <p>Follow us on social networks:</p>
+            <i class="fa fa-facebook-official"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-skype"></i>
+            <i class="fa fa-google-plus"></i>
+        </div>
+    
+        <div class="subscribe">
+            <p>Subscribe us to learn our new offers!</p>
+            <input type="email" name="subscribeEmail" placeholder="Your email" required>
+            <input type="submit" value="Submit">
+        </div>
+        <div class="rights">
+                <p>All rights reserved &reg; Hotelio 2017 </p>
+            </div>
+    </footer>
+    </div>
+</body>
+
+</html>
