@@ -122,8 +122,8 @@ nav{
     cursor: pointer;
 }
 .slide{
-    float: right;
-    height: 600px;
+    --float: right;
+    --height: 600px; 
     width: 100%;
 }
 @media only screen and (max-width : 640px) {
