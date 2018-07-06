@@ -40,12 +40,12 @@ function receiveValue(){
     var ser=hotelio.filt(val);
     var result='';
     if(ser.length==0){ 
-        result+='<h2 style="margin:auto;">Nqma savpadeniq</h2><br/>';
+        result+='<h2>No suitable results</h2><br/>';
     }
     else{
-        result += '<ol style="list-style-type:none;">';
+        result += '<ol style="list-style-type:none;" class="justify-content-center align-items-center">';
         ser.forEach(function (element) {
-            result += '<li style="background-color:#f4f4f4; border:1px solid grey"><article style="box-sizing:border-box; padding:5px;"><img src="' + element.url + '"alt="Image of the hotel" width="200px" style="float:left;"/><div style=" margin-left: 222px;"><h3>' + element.hotelname + '</h3><span>' + element.city + '</span><p>Distance to City center ' + element.distToCityCenter + ' km</p><p>Distance to the beach ' + element.distToSea + ' km</p></div></article></li><br/>';
+            result += '<li><article><img src="' + element.url + '"alt="Image of the hotel" width="200px" /><div><h3>' + element.hotelname + '</h3><span>' + element.city + '</span><p>Distance to City center ' + element.distToCityCenter + ' km</p><p>Distance to the beach ' + element.distToSea + ' km</p></div></article></li><br/>';
         }, this);
         result += '</ol>';
     }
